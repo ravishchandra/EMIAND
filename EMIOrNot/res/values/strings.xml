@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">EMI or Not</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="lblAmount">Amount</string>
+    <string name="lblRate">Interest Rate</string>
+    <string name="lblPeriod">Period</string>
+    <string name="lblFees">Fee(s)</string>
+    <string name="lblButton">Analyze</string>
+    <string name="lblRate_percent">%</string>
+    <string name="title_activity_display_analysis">Analysis Result</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+</resources>
