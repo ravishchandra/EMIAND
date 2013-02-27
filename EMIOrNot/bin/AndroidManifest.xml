@@ -30,6 +30,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.arav.emiornot.MainActivity" />
         </activity>
+        <activity
+            android:name="com.arav.emiornot.DisplayActivity"
+            android:label="@string/title_activity_display"
+            android:parentActivityName="com.arav.emiornot.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.arav.emiornot.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

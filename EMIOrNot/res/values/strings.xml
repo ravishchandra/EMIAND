@@ -14,5 +14,11 @@
     <string name="title_section1">Section 1</string>
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>
+    <string name="title_activity_display">Display Values</string>
+    <string name="lblSelectedValues">Selected Values</string>
+    <string name="lblAmountDisplay"></string>
+    <string name="lblRateDisplay"></string>
+    <string name="lblPeriodDisplay"></string>
+    <string name="lblFeesDisplayOut"></string>
 
 </resources>
