@@ -9,6 +9,7 @@ import android.widget.EditText;
 
 public class MainActivity extends Activity {
 
+	//	Final variables to use when needed
 	//	public final static String EXTRA_AMOUNT = "come.arav.emiornot.MESSAGE";
 	//	public final static String EXTRA_PERIOD = "come.arav.emiornot.MESSAGE";
 	//	public final static String EXTRA_RATE = "come.arav.emiornot.MESSAGE";
@@ -23,6 +24,7 @@ public class MainActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
+
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
@@ -30,17 +32,12 @@ public class MainActivity extends Activity {
 	public void analyzeEMI(View view){
 		//Analyze the EMI. Take objects from other classes for main
 
-		//Testing. Display the form input details
-		//		Context context = getApplicationContext();
-		CharSequence text = "Test!";
-		//		int duration = Toast.LENGTH_SHORT;
+		//Declare text variable to club all the TextView values together to be sent to intent.
+		CharSequence text;
 
-		//Try to club it all together
-		//String[] inputArray = null;
-
+		//Add each variable by declaring and then adding it to the text.
 		EditText editTextAmount = (EditText)findViewById(R.id.amount);
 		text = editTextAmount.getText().toString();
-		//inputArray[0] = text;
 
 		EditText editTextRate = (EditText)findViewById(R.id.rate);
 		text = text+editTextRate.getText().toString();
@@ -51,35 +48,27 @@ public class MainActivity extends Activity {
 		EditText editTextFees = (EditText)findViewById(R.id.fees);
 		text=text+editTextFees.getText().toString();
 
-		//		Toast toast = Toast.makeText(context, text, duration);
+		EditText editTextBankRate = (EditText)findViewById(R.id.bankRate);
+		text=text+editTextBankRate.getText().toString();
+
+
+		//TODO Handle exception for null values entered.
 
 		Intent intent = new Intent(this, DisplayActivity.class);
-		//		Bundle extras = new Bundle();
-		//		editTextAmount = (EditText) findViewById(R.id.amount);
 		String amount = editTextAmount.getText().toString();
-
-		//		editTextFees = (EditText) findViewById(R.id.fees);
 		String fees = editTextFees.getText().toString();
-
-		//		editTextRate = (EditText) findViewById(R.id.rate);
 		String rate = editTextRate.getText().toString();
-
-		//		editTextPeriod = (EditText) findViewById(R.id.period);
 		String period = editTextPeriod.getText().toString();
+		String bankRate = editTextBankRate.getText().toString();
 
-		//put variables in the bundle
+		//Put variables in the intent bundle
 		intent.putExtra("amount", amount);
 		intent.putExtra("fees", fees);
 		intent.putExtra("rate", rate);
 		intent.putExtra("period", period);
+		intent.putExtra("bankRate", bankRate);
 
-		//pass the bundle to the intent
-
-		//		intent.putExtras(extras);
-
-		//		Toast.makeText(context, message, duration);
-		//		toast.show();
-
+		//Start the new screen, intent
 		startActivity(intent);
 
 	}

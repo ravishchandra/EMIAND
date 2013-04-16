@@ -24,9 +24,10 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f08000f;
+        public static final int action_settings=0x7f080010;
         public static final int amount=0x7f08000a;
-        public static final int btnAnalyze=0x7f08000e;
+        public static final int bankRate=0x7f08000e;
+        public static final int btnAnalyze=0x7f08000f;
         public static final int fees=0x7f08000d;
         public static final int period=0x7f08000c;
         public static final int rate=0x7f08000b;
@@ -55,21 +56,23 @@ public final class R {
         public static final int app_name=0x7f050000;
         public static final int hello_world=0x7f050002;
         public static final int lblAmount=0x7f050003;
-        public static final int lblAmountDisplay=0x7f05000f;
-        public static final int lblButton=0x7f050007;
-        public static final int lblFees=0x7f050006;
-        public static final int lblFeesDisplayOut=0x7f050012;
+        public static final int lblAmountDisplay=0x7f050010;
+        public static final int lblBankRate=0x7f050014;
+        public static final int lblButton=0x7f050008;
+        public static final int lblFees=0x7f050007;
+        public static final int lblFeesDisplayOut=0x7f050013;
         public static final int lblPeriod=0x7f050005;
-        public static final int lblPeriodDisplay=0x7f050011;
+        public static final int lblPeriodDisplay=0x7f050012;
+        public static final int lblPeriods=0x7f050006;
         public static final int lblRate=0x7f050004;
-        public static final int lblRateDisplay=0x7f050010;
-        public static final int lblRate_percent=0x7f050008;
-        public static final int lblSelectedValues=0x7f05000e;
-        public static final int title_activity_display=0x7f05000d;
-        public static final int title_activity_display_analysis=0x7f050009;
-        public static final int title_section1=0x7f05000a;
-        public static final int title_section2=0x7f05000b;
-        public static final int title_section3=0x7f05000c;
+        public static final int lblRateDisplay=0x7f050011;
+        public static final int lblRate_percent=0x7f050009;
+        public static final int lblSelectedValues=0x7f05000f;
+        public static final int title_activity_display=0x7f05000e;
+        public static final int title_activity_display_analysis=0x7f05000a;
+        public static final int title_section1=0x7f05000b;
+        public static final int title_section2=0x7f05000c;
+        public static final int title_section3=0x7f05000d;
     }
     public static final class style {
         /** 

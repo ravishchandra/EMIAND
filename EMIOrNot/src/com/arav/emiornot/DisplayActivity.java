@@ -21,14 +21,17 @@ public class DisplayActivity extends Activity {
 			getActionBar().setDisplayHomeAsUpEnabled(true);
 		}
 
+		//Get the intent bundle passed from the calling activity.
 		Intent intent = getIntent();
-		//		Bundle extras = intent.getExtras();
+
+		//Set variables for this intent(screen) by assigning the values passed.
 		String setAmount = intent.getStringExtra("amount");
 		String setFees = intent.getStringExtra("fees");
 		String setRate = intent.getStringExtra("rate");
 		String setPeriod = intent.getStringExtra("period");
-		//		String setAmountTest = intent.getStringExtra(MainActivity.EXTRA_AMOUNT);
+		String setBankRate = intent.getStringExtra("bankRate");
 
+		//Set values to the display text fields in the screen.
 		TextView textViewAmount = (TextView) findViewById(R.id.textView6);
 		textViewAmount.setText(setAmount);
 
@@ -41,29 +44,39 @@ public class DisplayActivity extends Activity {
 		TextView textViewPeriod = (TextView) findViewById(R.id.textView8);
 		textViewPeriod.setText(setPeriod);
 
-		//		Toast.makeText(getApplicationContext(), setAmount.toString(), Toast.LENGTH_SHORT).show();
-
 		TextView test = (TextView) findViewById(R.id.textView10);
-		String sum = calculateSum(setAmount, setRate, setFees, setPeriod);
+		String sum = calculateSum(setAmount, setRate, setFees, setPeriod, setBankRate);
 		test.setText(sum);
+
+		//		Temporary testing with Toast to see the output.
+		//		Toast.makeText(getApplicationContext(), setAmount.toString(), Toast.LENGTH_SHORT).show();
 
 		//Start the action.
 		setupActionBar();
 	}
 
+	//Temporary method to calculate sum of all the values passed - Testing purpose
 	private String calculateSum(String setAmount, String setRate,
-			String setFees, String setPeriod) {
-		// TODO Auto-generated method stub
+			String setFees, String setPeriod, String setBankRate) {
+
 		int finalSum = 0;
 
 		int amount = Integer.parseInt(setAmount);
 		int fees = Integer.parseInt(setFees);
 		int period = Integer.parseInt(setPeriod);
 		int rate = Integer.parseInt(setRate);
+		int bankRate = Integer.parseInt(setBankRate);
 
-		finalSum = amount+rate+period+fees;
+		finalSum = amount+rate+period+fees+bankRate;
 
 		String sum = Integer.toString(finalSum);
+
+		//Test returning value from calculation engine
+
+		CalculationEngine ce = new CalculationEngine();
+		double emi = ce.calculatePV(amount, rate, period, bankRate);
+		sum = Double.toString(emi);
+
 		return sum;
 	}
 

@@ -7,6 +7,7 @@
     <string name="lblAmount">Amount</string>
     <string name="lblRate">Interest Rate</string>
     <string name="lblPeriod">Period</string>
+    <string name="lblPeriods">Period(s)</string>
     <string name="lblFees">Fee(s)</string>
     <string name="lblButton">Analyze</string>
     <string name="lblRate_percent">%</string>
@@ -20,5 +21,6 @@
     <string name="lblRateDisplay"></string>
     <string name="lblPeriodDisplay"></string>
     <string name="lblFeesDisplayOut"></string>
+    <string name="lblBankRate">Bank Rate</string>
 
 </resources>

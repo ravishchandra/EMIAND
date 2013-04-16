@@ -22,7 +22,7 @@
         android:layout_alignLeft="@+id/textView2"
         android:layout_below="@+id/textView2"
         android:layout_marginTop="20dp"
-        android:text="Amount" />
+        android:text="@string/lblAmount" />
 
     <TextView
         android:id="@+id/textView3"
@@ -31,7 +31,7 @@
         android:layout_alignLeft="@+id/textView1"
         android:layout_below="@+id/textView1"
         android:layout_marginTop="24dp"
-        android:text="Rate" />
+        android:text="@string/lblRate" />
 
     <TextView
         android:id="@+id/textView4"
@@ -40,7 +40,7 @@
         android:layout_alignLeft="@+id/textView3"
         android:layout_below="@+id/textView3"
         android:layout_marginTop="30dp"
-        android:text="Period(s)" />
+        android:text="@string/lblPeriods" />
 
     <TextView
         android:id="@+id/textView5"
@@ -49,7 +49,7 @@
         android:layout_alignLeft="@+id/textView4"
         android:layout_below="@+id/textView4"
         android:layout_marginTop="28dp"
-        android:text="Fee(s)" />
+        android:text="@string/lblFees" />
 
     <TextView
         android:id="@+id/textView6"
@@ -93,7 +93,7 @@
         android:layout_below="@+id/textView9"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="79dp"
-        android:text="Large Text"
+        android:text=""
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>
