@@ -1,5 +1,6 @@
 package com.arav.emiornot;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
@@ -56,6 +57,7 @@ public class DisplayActivity extends Activity {
 	}
 
 	//Temporary method to calculate sum of all the values passed - Testing purpose
+	@SuppressLint("DefaultLocale")
 	private String calculateSum(String setAmount, String setRate,
 			String setFees, String setPeriod, String setBankRate) {
 
@@ -69,13 +71,47 @@ public class DisplayActivity extends Activity {
 
 		finalSum = amount+rate+period+fees+bankRate;
 
+		//Converting sum to a String to display.
+		//Variable sum will be used only to display the desired result. Does not have any mathematical meaning.
+
 		String sum = Integer.toString(finalSum);
 
 		//Test returning value from calculation engine
 
 		CalculationEngine ce = new CalculationEngine();
-		double emi = ce.calculatePV(amount, rate, period, bankRate);
+
+		//Get PV
+		//		double pv = ce.calculatePV(amount, rate, period, bankRate);
+		//		sum = Double.toString(pv);
+
+		//Get EMI
+		double emi = ce.calculateEMI(amount, rate, period, bankRate);
 		sum = Double.toString(emi);
+
+		//Get Final FV
+		double FVSum = ce.calculateFV(emi, rate, period, bankRate);
+		//sum = Double.toString(FVSum);
+
+		//Round-down the display amount
+		sum = String.format("%.2f", FVSum);
+
+		//		double totalPayment = emi*period;
+		//		double result = totalPayment-pv;
+		//		sum = Double.toString(result);
+
+		//Analysis Part
+
+		double totalPaymentMade = emi*period;
+
+		if(FVSum>totalPaymentMade){
+			sum = "Analysis Result: Take the EMI Option. You'll save $"+String.format("%.2f",(FVSum-totalPaymentMade));
+		}
+		else if(FVSum<totalPaymentMade){
+			sum = "Analysis Result: Use your cash and pay it. EMI will set you back by $"+String.format("%.2f",(totalPaymentMade-FVSum));
+		}
+		else{
+			sum = "Both options seem Financially correct!";
+		}
 
 		return sum;
 	}
