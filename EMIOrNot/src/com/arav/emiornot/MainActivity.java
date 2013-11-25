@@ -3,6 +3,7 @@ package com.arav.emiornot;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
@@ -19,6 +20,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
 	}
 
 	@Override
@@ -40,7 +42,11 @@ public class MainActivity extends Activity {
 		text = editTextAmount.getText().toString();
 
 		EditText editTextRate = (EditText)findViewById(R.id.rate);
+		if (editTextRate.getText().toString().length()==0){
+			editTextRate.setError("Rate field cannot be left blank!");
+		}
 		text = text+editTextRate.getText().toString();
+
 
 		EditText editTextPeriod = (EditText)findViewById(R.id.period);
 		text = text+editTextPeriod.getText().toString();
@@ -61,10 +67,13 @@ public class MainActivity extends Activity {
 		String period = editTextPeriod.getText().toString();
 		String bankRate = editTextBankRate.getText().toString();
 
+		Log.d("RAVISH", "The Rate value inside MainActivity - assignment is: "+rate);
+
 		//Put variables in the intent bundle
 		intent.putExtra("amount", amount);
 		intent.putExtra("fees", fees);
 		intent.putExtra("rate", rate);
+		Log.d("RAVISH", "The Rate value inside MainActivity is: "+rate);
 		intent.putExtra("period", period);
 		intent.putExtra("bankRate", bankRate);
 
