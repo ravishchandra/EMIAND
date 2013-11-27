@@ -42,14 +42,11 @@ public class MainActivity extends Activity {
 		text = editTextAmount.getText().toString();
 
 		EditText editTextRate = (EditText)findViewById(R.id.rate);
-		if (editTextRate.getText().toString().length()==0){
-			editTextRate.setError("Rate field cannot be left blank!");
-		}
 		text = text+editTextRate.getText().toString();
-
 
 		EditText editTextPeriod = (EditText)findViewById(R.id.period);
 		text = text+editTextPeriod.getText().toString();
+		//String strPeriod = editTextPeriod.getText().toString();
 
 		EditText editTextFees = (EditText)findViewById(R.id.fees);
 		text=text+editTextFees.getText().toString();
@@ -57,8 +54,36 @@ public class MainActivity extends Activity {
 		EditText editTextBankRate = (EditText)findViewById(R.id.bankRate);
 		text=text+editTextBankRate.getText().toString();
 
-
-		//TODO Handle exception for null values entered.
+		//Seems like useless junk - setError. Update: Works with return statement.
+		if (editTextAmount.getText().toString().trim().length()==0){
+			editTextAmount.setError("Amount field cannot be left blank!");
+			//return;
+		}
+		if (editTextRate.getText().toString().trim().length()==0){
+			editTextRate.setError("Rate field cannot be left blank!");
+			//return;
+		}
+		if (editTextPeriod.getText().toString().trim().length()==0){
+			editTextPeriod.setError("Period field cannot be left blank!");
+			//return;
+		}
+		if (editTextBankRate.getText().toString().trim().length()==0){
+			editTextBankRate.setError("Bank Rate field cannot be left blank!");
+			return;
+		}
+		//		//Temporary validations. Need to convert them to Courton.
+		//		//Validation for Period
+		//		if (strPeriod.equals("0")){
+		//			Toast.makeText(getApplicationContext(), "Period cannot be 0!",
+		//					Toast.LENGTH_LONG).show();
+		//			return;
+		//		}
+		//		//Validation for Rate
+		//		if (editTextRate.getText().toString().trim().length()<1){
+		//			Toast.makeText(getApplicationContext(), "Rate cannot be left blank!",
+		//					Toast.LENGTH_LONG).show();
+		//			return;
+		//		}
 
 		Intent intent = new Intent(this, DisplayActivity.class);
 		String amount = editTextAmount.getText().toString();
@@ -73,7 +98,7 @@ public class MainActivity extends Activity {
 		intent.putExtra("amount", amount);
 		intent.putExtra("fees", fees);
 		intent.putExtra("rate", rate);
-		Log.d("RAVISH", "The Rate value inside MainActivity is: "+rate);
+		//		Log.d("RAVISH", "The Rate value inside MainActivity is: "+rate);
 		intent.putExtra("period", period);
 		intent.putExtra("bankRate", bankRate);
 
