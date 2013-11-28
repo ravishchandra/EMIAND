@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
-import android.util.Log;
+//import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -30,9 +30,9 @@ public class DisplayActivity extends Activity {
 		String setAmount = intent.getStringExtra("amount");
 		String setFees = intent.getStringExtra("fees");
 		String setRate = intent.getStringExtra("rate");
-		
-		Log.d("RAVISH", "The Rate value inside is: "+setRate);
-		
+
+		//Log.d("RAVISH", "The Rate value inside is: "+setRate);
+
 		String setPeriod = intent.getStringExtra("period");
 		String setBankRate = intent.getStringExtra("bankRate");
 
