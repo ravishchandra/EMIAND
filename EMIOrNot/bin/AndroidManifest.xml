@@ -14,7 +14,8 @@
         android:label="@string/app_name" >
         <activity
             android:name="com.arav.emiornot.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,7 +25,8 @@
         <activity
             android:name="com.arav.emiornot.DisplayAnalysis"
             android:label="@string/title_activity_display_analysis"
-            android:parentActivityName="com.arav.emiornot.MainActivity" >
+            android:parentActivityName="com.arav.emiornot.MainActivity"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.arav.emiornot.MainActivity" />
@@ -32,7 +34,8 @@
         <activity
             android:name="com.arav.emiornot.DisplayActivity"
             android:label="@string/title_activity_display"
-            android:parentActivityName="com.arav.emiornot.MainActivity" >
+            android:parentActivityName="com.arav.emiornot.MainActivity"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.arav.emiornot.MainActivity" />
